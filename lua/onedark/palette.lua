@@ -27,4 +27,4 @@ return {
 		diff_change = "#1c3448",
 		diff_text = "#2c5372",
 	}
-}
+} 

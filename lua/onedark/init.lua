@@ -12,6 +12,8 @@ function M.setup()
 	vim.api.nvim_command(string.format("hi Question guifg=%s", c.yellow  ))
 	vim.api.nvim_command(string.format("hi NormalFloat guifg=%s guibg=%s", c.fg , c.bg0 ))
 	vim.api.nvim_command(string.format("hi SignColumn guibg=%s", "none" ))
+	vim.api.nvim_command(string.format("hi TabLine guibg=%s", "none" ))
+	vim.api.nvim_command(string.format("hi MatchParen guibg=%s", c.grey ))
 end
 
 return M

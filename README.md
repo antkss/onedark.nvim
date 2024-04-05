@@ -1,0 +1,2 @@
+## setup 
+require("onedark").setup()

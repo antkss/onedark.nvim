@@ -14,6 +14,7 @@ function M.setup()
 	vim.api.nvim_command(string.format("hi SignColumn guibg=%s", "nil" ))
 	vim.api.nvim_command(string.format("hi TabLine guibg=%s", "nil" ))
 	vim.api.nvim_command(string.format("hi MatchParen guibg=%s", c.grey ))
+	vim.api.nvim_command(string.format("hi MiniIndentscopeSymbol guifg=%s", c.grey))
 end
 
 return M

@@ -8,7 +8,7 @@ return {
 		bg_d = "#21252b",
 		bg_blue = "#73b8f1",
 		bg_yellow = "#ebd09c",
-		fg = "#DDBFC5",
+		fg = "#DDBFC4",
 		purple = "#c678dd",
 		green = "#98c379",
 		orange = "#d19a66",
@@ -27,4 +27,4 @@ return {
 		diff_change = "#1c3448",
 		diff_text = "#2c5372",
 	}
-} 
+}

@@ -15,7 +15,7 @@ function M.setup()
 	vim.api.nvim_command(string.format("hi TabLine guibg=%s", "nil" ))
 	vim.api.nvim_command(string.format("hi MatchParen guibg=%s", c.grey ))
 	vim.api.nvim_command(string.format("hi MiniIndentscopeSymbol guifg=%s", c.grey))
-	vim.api.nvim_command(string.format("hi CocMenuSel ctermfg=0 guibg=%s",c.fg))
+	vim.api.nvim_command(string.format("hi CocMenuSel ctermfg=0 guibg=#383838 gui=underline"))
 end
 
 return M

@@ -16,6 +16,7 @@ function M.setup()
 	vim.api.nvim_command(string.format("hi MatchParen guibg=%s", c.grey ))
 	vim.api.nvim_command(string.format("hi MiniIndentscopeSymbol guifg=%s", c.grey))
 	vim.api.nvim_command(string.format("hi CocMenuSel ctermfg=0 guibg=#383838 gui=underline"))
+	vim.api.nvim_command(string.format("hi Conceal guibg=0 guifg=%s", c.grey))
 end
 
 return M

@@ -13,6 +13,7 @@ local c = require('onedark.palette')["dark"]
 if(M.file_exists(nvim_home .. "/lua/config/one.lua")) then
     c = require("config.one")["dark"]
 end
+require("onedark.vim")
 function M.setup()
 	vim.api.nvim_set_hl(0, "Normal", { fg = c.fg, bg = c.bg0 })
 	vim.api.nvim_set_hl(0, "Visual", { bg = c.bg3 })

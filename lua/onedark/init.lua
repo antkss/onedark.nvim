@@ -1,22 +1,35 @@
-local c = require('onedark.palette')["dark"]
 local M = {}
+local nvim_home = vim.fn.stdpath("config")
+function M.file_exists(file)
+    local f = io.open(file, "r")
+    if f then
+        io.close(f)
+        return true
+    else
+        return false
+    end
+end
+local c = require('onedark.palette')["dark"]
+if(M.file_exists(nvim_home .. "/lua/config/one.lua")) then
+    c = require("config.one")["dark"]
+end
 function M.setup()
-	vim.api.nvim_command(string.format("hi Normal guifg=%s guibg=%s", c.fg , c.bg0 ))
-	vim.api.nvim_command(string.format("hi Visual guibg=%s",c.bg3 ))
-	vim.api.nvim_command(string.format("hi Terminal guifg=%s guibg=%s",c.fg,c.bg0 ))
-	vim.api.nvim_command(string.format("hi EndOfBuffer guifg=%s guibg=%s",c.grey ,"nil"))
-	vim.api.nvim_command(string.format("hi LineNr guifg=%s",c.grey ))
-	vim.api.nvim_command(string.format("hi ErrorMsg guifg=%s guibg=%s",c.red,"nil" ))
-	vim.api.nvim_command(string.format("hi NonText guifg=%s",c.grey ))
-	vim.api.nvim_command(string.format("hi Pmenu guifg=%s guibg=%s", c.fg , c.bg0 ))
-	vim.api.nvim_command(string.format("hi Question guifg=%s", c.yellow  ))
-	vim.api.nvim_command(string.format("hi NormalFloat guifg=%s guibg=%s", c.fg , c.bg0 ))
-	vim.api.nvim_command(string.format("hi SignColumn guibg=%s", "nil" ))
-	vim.api.nvim_command(string.format("hi TabLine guibg=%s", "nil" ))
-	vim.api.nvim_command(string.format("hi MatchParen guibg=%s", c.grey ))
-	vim.api.nvim_command(string.format("hi MiniIndentscopeSymbol guifg=%s", c.grey))
-	vim.api.nvim_command(string.format("hi CocMenuSel ctermfg=0 guibg=#383838 gui=underline"))
-	vim.api.nvim_command(string.format("hi Conceal guibg=0 guifg=%s", c.grey))
+	vim.api.nvim_set_hl(0, "Normal", { fg = c.fg, bg = c.bg0 })
+	vim.api.nvim_set_hl(0, "Visual", { bg = c.bg3 })
+	vim.api.nvim_set_hl(0, "Terminal", { fg = c.fg, bg = c.bg0 })
+	vim.api.nvim_set_hl(0, "EndOfBuffer", { fg = c.grey, bg = nil })
+	vim.api.nvim_set_hl(0, "LineNr", { fg = c.grey })
+	vim.api.nvim_set_hl(0, "ErrorMsg", { fg = c.red, bg = nil })
+	vim.api.nvim_set_hl(0, "NonText", { fg = c.grey })
+	vim.api.nvim_set_hl(0, "Pmenu", { fg = c.fg, bg = c.bg0 })
+	vim.api.nvim_set_hl(0, "Question", { fg = c.yellow })
+	vim.api.nvim_set_hl(0, "NormalFloat", { fg = c.fg, bg = c.bg0 })
+	vim.api.nvim_set_hl(0, "SignColumn", { bg = nil })
+	vim.api.nvim_set_hl(0, "TabLine", { bg = nil })
+	vim.api.nvim_set_hl(0, "MatchParen", { bg = c.grey })
+	vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", { fg = c.grey })
+	vim.api.nvim_set_hl(0, "CocMenuSel", { ctermfg = 0, bg = "#383838", underline = true })
+	vim.api.nvim_set_hl(0, "Conceal", { bg = 0, fg = c.grey })
 end
 
 return M

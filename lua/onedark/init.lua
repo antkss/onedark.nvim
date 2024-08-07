@@ -1,4 +1,5 @@
 local M = {}
+vim.opt.termguicolors=true
 local nvim_home = vim.fn.stdpath("config")
 function M.file_exists(file)
     local f = io.open(file, "r")
